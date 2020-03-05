@@ -1,0 +1,27 @@
+
+
+<mat-accordion >
+  <div name="div" *ngFor="let item of tasks" >
+  <mat-expansion-panel class="accordion">
+  <mat-expansion-panel-header>
+    <mat-panel-title class="text" [ngClass]="{'priority1': item.priority == 1, 'priority2': item.priority == 2, 'priority3' : item.priority == 3}" >
+    {{item.name}}
+    </mat-panel-title>
+    <mat-panel-description>
+  <button mat-button class="text" (click)="onDeleteTask(item)" [ngClass]="{'priority1': item.priority == 1, 'priority2': item.priority == 2, 'priority3' : item.priority == 3}">{{item.id}}</button>
+    </mat-panel-description>
+  </mat-expansion-panel-header>
+  <table>
+<tr>
+<td class="label, text" style="text-decoration-line: underline">תיאור המשימה:</td>
+<td class="text">{{item.discerbition}}</td>
+</tr>
+<tr>
+<td class="label, text" style="text-decoration-line: underline"> מיקום:</td>
+<td class="text">{{item.place}}</td>
+</tr>
+  </table>
+
+  </mat-expansion-panel>
+  </div>
+</mat-accordion>

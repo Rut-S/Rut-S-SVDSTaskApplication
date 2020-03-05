@@ -1,0 +1,9 @@
+<div class="body">
+<h1  class="title">ניהול משימות</h1>
+
+<app-add-task  (addTask)="onTaskAdded($event)" dir="rtl" class="addTask"></app-add-task>
+<app-task-list [tasks]="myTasks" (deleteTask)="onTaskDeleted($event)" style="text-align: right"></app-task-list>
+
+
+<router-outlet></router-outlet>
+</div>

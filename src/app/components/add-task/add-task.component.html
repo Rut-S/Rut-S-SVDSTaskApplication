@@ -1,0 +1,24 @@
+
+<form (ngSubmit)="onAddTask(); taskModelForm.reset()" class="example-form"  #taskModelForm="ngForm">
+    <mat-form-field class="example-full-width">
+        <input matInput  type="text" name="name" placeholder="המשימה הבאה שלי..." [(ngModel)]="task.name" minlength='3' #trackName="ngModel">
+
+    </mat-form-field>
+            <p class="alert" *ngIf="!trackName.valid && trackName.touched">The minimum length of name field is 3 charcters</p>
+
+    
+     <mat-form-field class="example-full-width">
+        <input matInput type="text" name="discerbition" placeholder="תיאור" [(ngModel)]="task.discerbition">
+    </mat-form-field>
+     <mat-form-field class="example-full-width">
+        <input matInput type="text" name="place" placeholder="מיקום" [(ngModel)]="task.place">
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+    <mat-select [(ngModel)]="task.priority" [ngModelOptions]="{standalone: true}">
+        <mat-option [value]=1>דחיפות נמוכה</mat-option>
+        <mat-option [value]=2>דחיפות גבוהה</mat-option>
+        <mat-option [value]=3>דחיפות גבוהה מאד!!</mat-option>
+    </mat-select>
+    </mat-form-field>
+  <button mat-button type="submit" [disabled]="!taskModelForm.form.valid" class="button">שמור</button>
+</form>

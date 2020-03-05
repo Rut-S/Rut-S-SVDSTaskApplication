@@ -1,0 +1,16 @@
+
+.body{
+    direction: rtl;
+    text-align: center;
+    
+}
+.title{
+    padding-bottom: 7vh;
+    padding-top: 7vh;
+    color: blue;
+}
+.addTask{
+    direction:rtl;
+color:darkgray;
+
+}
